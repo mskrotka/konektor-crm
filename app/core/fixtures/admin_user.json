@@ -1,0 +1,16 @@
+[
+    {
+        "model": "users.CustomUser",
+        "pk": 1,
+        "fields": {
+            "email": "test@email.pl",
+            "password": "pbkdf2_sha256$260000$LIh5SCtrmgvUqDd8KD4wMc$0jiPEvJN/54YsQ4shDHIErAg6RILqukncpDHiGCEbgU=", 
+            "is_staff": "True",
+            "is_superuser": "True",
+            "is_active": "True",
+            "created": "2021-01-17",
+            "modified": "2021-01-17"
+
+        }
+    }
+]

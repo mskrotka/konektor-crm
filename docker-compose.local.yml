@@ -1,0 +1,34 @@
+version: '3.7'
+
+volumes:
+  db_volume:
+
+services:
+  app:
+    tty: true
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: name-app
+    ports:
+      - 8000:8000
+    env_file:
+      - ./.env
+    command: |
+      python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+    volumes:
+      - ./app/:/app
+
+  db:
+    image: postgres:12
+    container_name: name-db
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=name
+    volumes:
+      - db_volume:/var/lib/postgres/data/
