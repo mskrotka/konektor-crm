@@ -4,7 +4,7 @@
         "pk": 1,
         "fields": {
             "email": "test@email.pl",
-            "password": "pbkdf2_sha256$260000$LIh5SCtrmgvUqDd8KD4wMc$0jiPEvJN/54YsQ4shDHIErAg6RILqukncpDHiGCEbgU=", 
+            "password": "pbkdf2_sha256$260000$fiOW2M7NdlWTmpk7KnX25F$OmKMhjIWlyLvTXwFhTTrMwmRSkkV5itfKEcrCKNxQZo=", 
             "is_staff": "True",
             "is_superuser": "True",
             "is_active": "True",
