@@ -51,3 +51,20 @@ After cloning repository, run `pre-commit install` to install hooks.
 > Windows (as always, more complicated) https://stackoverflow.com/questions/32127524/how-to-install-and-use-make-in-windows
 
 Makefile was created for convinient usage of all sorts of project related commands. Feel free to add some more, but remember to update README.
+
+### Fixtures
+
+Update admin data permission to admin panel in `core/fixtures/admin_user.json`, now it is deafult:
+
+* login: test@email.pl
+* password: test
+
+> How to generate new hashed password? Make sure you have started container `$ make up`
+> 
+> 1. Get in to shell django on container: `$ make shell_plus`
+> 
+> 2. Import password generator: `$ from django.contrib.auth.hashers import make_password`
+> 
+> 3. Encode your new password: `$make_password('test')`
+> 4. Copy hased password and paste in fixture.
+> 5. Call `$ exit()` to exit.
