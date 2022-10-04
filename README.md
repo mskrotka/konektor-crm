@@ -1,15 +1,18 @@
-# [APP NAME]
+# [VIMM]
 
-## Running app locally
+## Loklane odpalenie aplikacji
 
-1. Create `.env` file: `make env`
-2. Run containers: `make up`
-3. Migrate existing migrations: `make migrate`
-4. Upload fixtures: `make fix`
-5. App is now available on `localhost:8000`
+1. Stwórz plik `.env`: `make env`
+2. WYstartuj kontenery: `make up`
+3. Dokonaj migracji do bazy danych: `make migrate`
+4. Załaduj Ffixy: `make fix`
+5. Aplikacja jest dostępna na `localhost:80`
 
-## Make commands
-| COMMAND | DESCRIPTION |
+## Komendy MAKE
+
+Poniżej znajdziesz instrukcję jak zainstalować MAKE.
+
+| KOMENDA | OPIS |
 |-----------|-----------|
 |**env**|`cp .env_example .env`|
 |**up**|`docker-compose -f docker-compose.local.yml up -d`|
@@ -22,15 +25,6 @@
 |**shell_plus**|`docker exec -it name-app python manage.py shell`|
 |**test**|`docker exec -it name-app python manage.py test`|
 
-## Git flow
-
-Branch `main` is the branch that reflects what is currently production code.
-
-Branch `staging` is the main branch and all pull requests should be compared with this branch.
-
-For new features we use feature branches and their names should be copied from Clickup.
-
-When PR is open, contributor is responsible for assigning reviewers, resolving conflicts, merging after at least one approval from reviewers. When merging use `Squash and merge` and delete branch after successful merge.
 
 ## Development
 
@@ -60,11 +54,11 @@ Update admin data permission to admin panel in `core/fixtures/admin_user.json`, 
 * password: test
 
 > How to generate new hashed password? Make sure you have started container `$ make up`
-> 
+>
 > 1. Get in to shell django on container: `$ make shell_plus`
-> 
+>
 > 2. Import password generator: `$ from django.contrib.auth.hashers import make_password`
-> 
+>
 > 3. Encode your new password: `$make_password('test')`
 > 4. Copy hased password and paste in fixture.
 > 5. Call `$ exit()` to exit.
