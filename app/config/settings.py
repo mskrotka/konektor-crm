@@ -51,7 +51,7 @@ DJANGO_APPS = [
 ]
 
 # Add third party apps here
-THIRD_PARTY_APPS = ["rest_framework", "simple_history", "phonenumber_field"]
+THIRD_PARTY_APPS = ["rest_framework", "simple_history"]
 
 # Add new project apps here
 LOCAL_APPS = [
