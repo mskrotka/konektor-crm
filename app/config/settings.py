@@ -117,6 +117,11 @@ REST_FRAMEWORK = {
 }
 
 
+if DEBUG:
+    STATIC_URL = "/static/"
+    MEDIA_URL = "/media/"
+    MEDIA_ROOT = BASE_DIR("media")
+
 # Konfiguracja AWS S3
 AWS_DEFAULT_REGION = env("AWS_DEFAULT_REGION", default="")
 AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID", default="")
