@@ -41,7 +41,7 @@ jobs:
           key: ${{ secrets.DEV_KEY }}
           port: 22
           script: |
-            cd kamedia-crm-be/
+            cd konektor-crm/
             cp .env_example .env
             docker-compose -f docker-compose.local.yml up -d --force-recreate --build
             docker exec -i name-app python manage.py makemigrations
