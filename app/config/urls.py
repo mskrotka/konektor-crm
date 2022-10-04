@@ -20,6 +20,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
+        path("crm/", include("crm.urls")),
 ]
 
 if settings.DEBUG:

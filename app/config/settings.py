@@ -51,12 +51,14 @@ DJANGO_APPS = [
 ]
 
 # Add third party apps here
-THIRD_PARTY_APPS = ["rest_framework", "simple_history"]
+THIRD_PARTY_APPS = ["rest_framework", "simple_history", "phonenumber_field"]
 
 # Add new project apps here
 LOCAL_APPS = [
     "core.apps.CoreConfig",
     "users.apps.UsersConfig",
+    "clients.apps.ClientsConfig",
+    "crm.apps.CrmConfig",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -118,7 +120,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Europe/Warsaw"
 
 USE_I18N = True
 

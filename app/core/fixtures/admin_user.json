@@ -3,14 +3,67 @@
         "model": "users.CustomUser",
         "pk": 1,
         "fields": {
-            "email": "test@email.pl",
-            "password": "pbkdf2_sha256$260000$fiOW2M7NdlWTmpk7KnX25F$OmKMhjIWlyLvTXwFhTTrMwmRSkkV5itfKEcrCKNxQZo=", 
+            "email": "marketing@michal-swiderski.pl",
+            "password": "pbkdf2_sha256$260000$APSX5PxC8qzFXXZrzk7M0h$QjxecqPKH2LRHk2TbNLh+z03ZVS/yL16NaziLiXh9d0=",
             "is_staff": "True",
             "is_superuser": "True",
             "is_active": "True",
             "created": "2021-01-17",
             "modified": "2021-01-17"
-
+        }
+    },{
+        "model": "clients.Customer",
+        "pk": "f795ccec-fb20-41cc-ac99-518f988fc5b9",
+        "fields": {
+            "name": "Klient testowy 1"
+        }
+    },{
+        "model": "crm.LandingPage",
+        "pk": "82638943-97da-4a21-b0b2-ea979995212c",
+        "fields": {
+            "name": "Landing Page testowy 1",
+            "link": "brak linku",
+            "description": "jakis opis tego landinga",
+            "customer": "f795ccec-fb20-41cc-ac99-518f988fc5b9"
+        }
+    },{
+        "model": "crm.LandingPage",
+        "pk": "b9f87abf-7c88-4590-8292-734f33abbf77",
+        "fields": {
+            "name": "Landing Page testowy 2",
+            "link": "brak linku",
+            "description": "jakis opis tego landinga drugiego",
+            "customer": "f795ccec-fb20-41cc-ac99-518f988fc5b9"
+        }
+    },{
+        "model": "crm.Campaign",
+        "pk": "12",
+        "fields": {
+            "name": "PM BP: Elektryczność",
+            "description": "jakis opis kampanii",
+            "customer": "f795ccec-fb20-41cc-ac99-518f988fc5b9",
+            "system_ads": "1",
+            "default": "False"
+        }
+    },{
+        "model": "crm.Campaign",
+        "pk": "13",
+        "fields": {
+            "name": "WA: Elektryczność",
+            "description": "jakis opis kampanii",
+            "customer": "f795ccec-fb20-41cc-ac99-518f988fc5b9",
+            "system_ads": "2",
+            "default": "False"
+        }
+    },{
+        "model": "crm.Campaign",
+        "pk": "14",
+        "fields": {
+            "name": "Nieprzypisana",
+            "description": "jakis opis kampanii",
+            "customer": "f795ccec-fb20-41cc-ac99-518f988fc5b9",
+            "system_ads": "3",
+            "default": "True"
         }
     }
 ]
