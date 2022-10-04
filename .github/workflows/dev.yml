@@ -1,0 +1,49 @@
+name: Deploy to dev
+on:
+  push:
+    branches:
+      - development
+
+
+jobs:
+  development_deploy:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Compose down
+        uses: appleboy/ssh-action@master
+        continue-on-error: true
+        with:
+          host: ${{ secrets.DEV_HOST }}
+          username: ${{ secrets.DEV_USER }}
+          key: ${{ secrets.DEV_KEY }}
+          port: 22
+          script: |
+            cd kamedia-crm-be/
+            docker-compose -f docker-compose.local.yml stop
+      - name: Sync
+        run: |
+          echo "${{secrets.DEV_KEY}}" > dev_key
+          chmod 600 ./dev_key
+          rsync -chav \
+            -e 'ssh -i ./dev_key -o StrictHostKeyChecking=no' \
+            --exclude /dev_key \
+            --exclude /.git/ \
+            --exclude /.github/ \
+            . ${{ secrets.DEV_DESTINATION }}
+      - name: Compose up
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DEV_HOST }}
+          username: ${{ secrets.DEV_USER }}
+          key: ${{ secrets.DEV_KEY }}
+          port: 22
+          script: |
+            cd konektor-crm/
+            cp .env_example .env
+            docker-compose -f docker-compose.local.yml up -d --force-recreate --build
+            docker exec -i name-app python manage.py makemigrations
+            docker exec -i name-app python manage.py migrate
+            docker exec -i name-app python manage.py loaddata core/fixtures/admin_user.json
