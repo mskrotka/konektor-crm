@@ -21,7 +21,7 @@ jobs:
           key: ${{ secrets.DEV_KEY }}
           port: 22
           script: |
-            cd kamedia-crm-be/
+            cd konektor-crm/
             docker-compose -f docker-compose.local.yml stop
       - name: Sync
         run: |
