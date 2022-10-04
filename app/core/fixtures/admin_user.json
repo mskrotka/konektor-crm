@@ -12,6 +12,19 @@
             "modified": "2021-01-17"
         }
     },{
+        "model": "users.CustomUser",
+        "pk": 2,
+        "fields": {
+            "email": "test@email.pl",
+            "password": "pbkdf2_sha256$260000$fiOW2M7NdlWTmpk7KnX25F$OmKMhjIWlyLvTXwFhTTrMwmRSkkV5itfKEcrCKNxQZo=",
+            "is_staff": "True",
+            "is_superuser": "True",
+            "is_active": "True",
+            "created": "2021-01-17",
+            "modified": "2021-01-17"
+
+        }
+    },{
         "model": "clients.Customer",
         "pk": "f795ccec-fb20-41cc-ac99-518f988fc5b9",
         "fields": {
