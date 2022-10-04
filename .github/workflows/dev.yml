@@ -46,4 +46,3 @@ jobs:
             docker-compose -f docker-compose.local.yml up -d --force-recreate --build
             docker exec -i name-app python manage.py makemigrations
             docker exec -i name-app python manage.py migrate
-            docker exec -i name-app python manage.py loaddata core/fixtures/admin_user.json
