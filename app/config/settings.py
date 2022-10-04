@@ -24,7 +24,8 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     "rest_framework",
     "simple_history",
-    "storages"
+    "storages",
+    "corsheaders",
 ]
 
 
@@ -42,6 +43,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -87,7 +89,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
-# SUtawienia regionalne
+# Ustawienia regionalne
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "Europe/Warsaw"
 USE_I18N = True
@@ -105,7 +107,7 @@ AUTH_USER_MODEL = "users.CustomUser"
 
 
 # Ustawienia CORS
-CORS_ORIGIN_ALLOWLIST = env("CORS_ORIGIN_ALLOWLIST", default="")
+CORS_ORIGIN_ALLOW_ALL = env("CORS_ORIGIN_ALLOW_ALL", default=False)
 
 
 # Ustawienia Rest Framework
