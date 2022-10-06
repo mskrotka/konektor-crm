@@ -42,7 +42,6 @@ jobs:
           port: 22
           script: |
             cd konektor-crm/
-            cp .env_example .env
             docker-compose -f docker-compose.local.yml up -d --force-recreate --build
             docker exec -i name-app python manage.py makemigrations
             docker exec -i name-app python manage.py migrate
