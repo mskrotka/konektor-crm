@@ -25,5 +25,5 @@ app_shell:
 shell_plus:
 	docker exec -it name-app python manage.py shell
 
-test:
+do_test:
 	docker exec -it name-app python manage.py test
